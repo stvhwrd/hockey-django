@@ -148,6 +148,7 @@ Access the Django admin at `http://localhost:8000/admin/` to manage:
 - Detailed game event logging
 - Historical data preservation
 - Flexible fantasy scoring systems
+- **NHL data integration** via `nhldata` package for real-time API access
 
 ### Fantasy Features
 
@@ -178,18 +179,25 @@ Access the Django admin at `http://localhost:8000/admin/` to manage:
 
 The project is designed to accept data from external sources:
 
-- NHL API integration ready via external ID fields
+- **NHL API integration** via the `nhldata` package for accessing:
+  - Official NHL APIs (roster data, stats, schedules)
+  - MoneyPuck.com advanced analytics and shot data
+  - Real-time and historical NHL data
+- External ID fields for data imports from other sources
 - Flexible JSON fields for varying data structures
 - Bulk import capabilities through management commands
 
 ## Future Enhancements
 
-- API integration with NHL.com
-- Real-time game updates
-- Advanced analytics and projections
+- Enhanced NHL data integration with `nhldata` package:
+  - Automated player roster updates
+  - Real-time game statistics import
+  - Historical shot data from MoneyPuck
+  - Advanced analytics and projections
 - Mobile app support
 - Social features (leagues, chat, etc.)
 - Draft tools and utilities
+- Live scoring and notifications
 
 ## License
 
