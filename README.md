@@ -201,4 +201,4 @@ The project is designed to accept data from external sources:
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0). This ensures the software remains free and open source, preventing proprietary use or commercialization without contributing back to the community.
