@@ -1,0 +1,140 @@
+# Fantasy Hockey Platform
+
+A Django-based fantasy hockey platform focused on comprehensive data management and analytics.
+
+## Project Structure
+
+This project is organized into several Django apps:
+
+### Apps
+
+- **`teams/`** - NHL teams, conferences, divisions, and seasons
+- **`players/`** - Player profiles, statistics, and team history
+- **`games/`** - Game data, events, goals, and player game statistics
+- **`fantasy/`** - Fantasy leagues, teams, rosters, and scoring
+
+## Database Models
+
+### Teams App
+- **Conference** - NHL conferences (Eastern, Western)
+- **Division** - NHL divisions (Atlantic, Metropolitan, Central, Pacific)
+- **Team** - NHL teams with branding and arena information
+- **Season** - NHL seasons with date ranges
+
+### Players App
+- **Position** - Hockey positions (C, LW, RW, LD, RD, G)
+- **Player** - Player profiles with personal and career information
+- **PlayerTeamHistory** - Track player movements between teams
+- **PlayerStats** - Season statistics for players
+
+### Games App
+- **Game** - Individual NHL games
+- **GameEvent** - Game events (goals, penalties, shots, etc.)
+- **Goal** - Detailed goal information with assists
+- **PlayerGameStats** - Player statistics for specific games
+
+### Fantasy App
+- **League** - Fantasy leagues with settings and rules
+- **FantasyTeam** - Teams within fantasy leagues
+- **Roster/RosterSlot** - Player rosters and positions
+- **Trade** - Trading system between fantasy teams
+- **FantasyScoring** - Configurable scoring settings
+- **FantasyWeek/Matchup** - Weekly matchups and scheduling
+- **PlayerFantasyStats** - Weekly fantasy points calculation
+
+## Getting Started
+
+### Prerequisites
+- Python 3.8+
+- Django 5.2+
+
+### Installation
+
+1. Clone the repository
+2. Create a virtual environment:
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   ```
+
+3. Install dependencies:
+   ```bash
+   pip install django python-decouple psycopg2-binary pillow
+   ```
+
+4. Run migrations:
+   ```bash
+   python manage.py migrate
+   ```
+
+5. Create a superuser:
+   ```bash
+   python manage.py createsuperuser
+   ```
+
+6. Populate initial data:
+   ```bash
+   python manage.py populate_initial_data
+   ```
+
+7. Start the development server:
+   ```bash
+   python manage.py runserver
+   ```
+
+### Admin Interface
+
+Access the Django admin at `http://localhost:8000/admin/` to manage:
+- Teams and organizational structure
+- Player profiles and statistics
+- Game data and events
+- Fantasy leagues and teams
+
+## Key Features
+
+### Data-Centric Design
+- Comprehensive player statistics tracking
+- Detailed game event logging
+- Historical data preservation
+- Flexible fantasy scoring systems
+
+### Fantasy Features
+- Multiple league types (points, categories, head-to-head)
+- Configurable roster sizes and positions
+- Trading system between teams
+- Weekly matchups and scoring
+- Automated fantasy points calculation
+
+### Extensibility
+- Modular app structure for easy feature additions
+- JSON fields for flexible event data storage
+- External ID fields for data imports
+- Abstract base classes for common functionality
+
+## Development
+
+### Adding New Features
+1. Create models in the appropriate app
+2. Run `python manage.py makemigrations`
+3. Run `python manage.py migrate`
+4. Register models in admin.py if needed
+5. Create management commands for data population
+
+### Data Import
+The project is designed to accept data from external sources:
+- NHL API integration ready via external ID fields
+- Flexible JSON fields for varying data structures
+- Bulk import capabilities through management commands
+
+## Future Enhancements
+
+- API integration with NHL.com
+- Real-time game updates
+- Advanced analytics and projections
+- Mobile app support
+- Social features (leagues, chat, etc.)
+- Draft tools and utilities
+
+## License
+
+This project is licensed under the MIT License.
